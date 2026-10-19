@@ -85,7 +85,7 @@ const persona = {
 }
 
 const {userName, lastName, age} = persona
-console.log(`ciao sono ${userName} ${lastName} ho ${age} anni`)
+console.log(`ciao sono ${userName} ${lastName} ho ${age} anni`);
 
 /* ESERCIZIO 3 — Destructuring nei parametri
    Scrivi una arrow function "riepilogo" che riceve un utente e ritorna
@@ -97,11 +97,11 @@ console.log(`ciao sono ${userName} ${lastName} ho ${age} anni`)
 const riepilogo = ({nome, cognome , eta}) => {
 		return `ciao sono ${nome} ${cognome} (${eta} anni)`
 	
-}
+};
 
-console.log(riepilogo(utenti[0]))
-console.log(riepilogo(utenti[1]))
-console.log(riepilogo(utenti[2]))
+console.log(riepilogo(utenti[0]));
+console.log(riepilogo(utenti[1]));
+console.log(riepilogo(utenti[2]));
 
 
 /* ESERCIZIO 4 — Spread su array
@@ -113,8 +113,8 @@ console.log(riepilogo(utenti[2]))
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const numeri = [1, 2, 3];
-const newNumeri = [...numeri]
-newNumeri.push(99)
+const newNumeri = [...numeri];
+newNumeri.push(99);
 console.log('Array originale:', numeri);
 console.log('Array copiato:', newNumeri);
 
@@ -127,10 +127,10 @@ console.log('Array copiato:', newNumeri);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const frutti = ['mela', 'banana'];
-const verdure = ["carota", "spinaci"]
+const verdure = ["carota", "spinaci"];
 
 const cibo = [...frutti,...verdure];
-console.log(cibo)
+console.log(cibo);
 
 
 /* ESERCIZIO 6 — Spread su oggetto
@@ -144,10 +144,10 @@ console.log(cibo)
 const prodotto = {
 	nome: 'Cuffie',
 	prezzo: 79.99
-}
+};
 
 const newProdotto = {...prodotto, disponibile:true}
-console.log(newProdotto)
+console.log(newProdotto);
 
 /* ESERCIZIO 7 — forEach
    Stampa tutti gli utenti nel formato "- Nome Cognome (città)".
@@ -157,7 +157,7 @@ console.log(newProdotto)
 /* SCRIVI QUI LA TUA RISPOSTA */
 utenti.forEach(({nome, cognome, città}) => {
 	console.log(`- ${nome} ${cognome} (${città})`)
-})
+});
 /* ESERCIZIO 8 — map a stringhe
    Usa map per creare nomiCompleti = ["Mario Rossi", "Anna Bianchi", ...].
    Stampa l'array.
@@ -167,8 +167,8 @@ utenti.forEach(({nome, cognome, città}) => {
 
 const newUtenti = utenti.map(({nome,cognome}) => {
 	return `${nome} ${cognome}`
-})
-console.log(newUtenti)
+});
+console.log(newUtenti);
 
 /* ESERCIZIO 9 — map a oggetti
    Usa map per creare utentiPlus: array di oggetti dove ogni utente ha tutte
@@ -181,18 +181,18 @@ console.log(newUtenti)
 /* SCRIVI QUI LA TUA RISPOSTA */
 const utentiPlus = utenti.map((utente) =>{
  return {...utente, descrizione: `${utente.nome} ${utente.cognome}, ${utente.città}`}
-})
-console.log(utentiPlus[0])
+});
+console.log(utentiPlus[0]);
 
 /* ESERCIZIO 10 — filter attivi
    Usa filter per ottenere solo gli utenti con attivo: true.
    Stampa l'array risultante.
 */
 
-const utentiAttivi = utenti.filter(utente => utente.attivo === true)
+const utentiAttivi = utenti.filter(utente => utente.attivo === true);
 
 
-console.log(utentiAttivi) 
+console.log(utentiAttivi) ;
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -202,10 +202,13 @@ console.log(utentiAttivi)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const utentiMaggiorenni = utenti.filter(utente => utente.eta >= 18)
+const utentiMaggiorenni = utenti.filter ((utente) => {
+	return utente.eta >= 18 && utente.città === 'Milano'
+
+});
 
 
-console.log(utentiMaggiorenni) 
+console.log(utentiMaggiorenni) ;
 /* ESERCIZIO 12 — find
    Usa find per trovare il primo utente con id === 4.
    Stampa l'oggetto.
@@ -213,9 +216,9 @@ console.log(utentiMaggiorenni)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const trovaUtente = utenti.find(utente => utente.id === 4)
+const trovaUtente = utenti.find(utente => utente.id === 4);
 
-console.log(trovaUtente)
+console.log(trovaUtente);
 
 /* ESERCIZIO 13 — reduce
    a) Usa reduce per calcolare l'età media (somma età / numero utenti). Stampa.
@@ -223,23 +226,36 @@ console.log(trovaUtente)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const etaMedia = utenti.reduce((acc, utente) => acc + utente.eta , 0) / utenti.length
-const newUtentiAttivi = utenti.reduce((acc, utente) => acc + utente.attivo , 0)
+const etaMedia = utenti.reduce((acc, utente) => acc + utente.eta , 0) / utenti.length;
+const newUtentiAttivi = utenti.reduce((acc, utente) => acc + utente.attivo , 0);
 
-console.log(etaMedia.toFixed(0));
-console.log(newUtentiAttivi)
+console.log(`eta' media: ${etaMedia.toFixed(0)}`);
+console.log(`utenti attualmente attivi: ${newUtentiAttivi}`);
 /* ESERCIZIO 14 — sort
    a) Ordina gli utenti per eta crescente. Stampa l'array di nomi nell'ordine.
    b) Ordina gli utenti per nome alfabeticamente. Stampa l'array di nomi nell'ordine.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const etaCrescente = utenti.sort((utente1, utente2) => utente1.eta - utente2.eta)
+
+const etaCrescente = utenti.sort((utente1, utente2) => utente1.eta - utente2.eta);
 
 
-console.log(etaCrescente)
+const ordineAlfabetico = utenti.sort((utente1,utente2) => utente1.nome.localeCompare(utente2.nome));
 
 
+const ordineIf = utenti.sort((utente1,utente2) => {
+	if(utente1.nome > utente2.nome) {
+		return 1
+	} if( utente1.nome < utente2.nome){
+		return -1
+	}
+});
+
+
+console.log('Array eta\' crescente:', etaCrescente);
+console.log('array stampato con localeCompare:', ordineAlfabetico);
+console.log('Array stampato con if:',ordineIf);
 
 
 /* ESERCIZIO 15 — Chaining
@@ -250,8 +266,13 @@ console.log(etaCrescente)
    Stampa il risultato.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
 
+/* SCRIVI QUI LA TUA RISPOSTA */
+const utentiFiltrati = utenti.filter((utente,) => utente.attivo)
+							.map((utente) => `${utente.nome} ${utente.cognome}`)
+							.sort();
+							
+console.log(utentiFiltrati);
 
 
 

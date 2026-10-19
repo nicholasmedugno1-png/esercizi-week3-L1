@@ -112,6 +112,12 @@ console.log(riepilogo(utenti[2]))
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const numeri = [1, 2, 3];
+const newNumeri = [...numeri]
+newNumeri.push(99)
+console.log('Array originale:', numeri);
+console.log('Array copiato:', newNumeri);
+
 /* ESERCIZIO 5 — Spread per concatenare
    frutti  = ["mela", "banana"]
    verdure = ["carota", "spinaci"]
@@ -119,6 +125,13 @@ console.log(riepilogo(utenti[2]))
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const frutti = ['mela', 'banana'];
+const verdure = ["carota", "spinaci"]
+
+const cibo = [...frutti,...verdure];
+console.log(cibo)
+
 
 /* ESERCIZIO 6 — Spread su oggetto
    prodotto = { nome: "Cuffie", prezzo: 79.99 }
@@ -128,19 +141,34 @@ console.log(riepilogo(utenti[2]))
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const prodotto = {
+	nome: 'Cuffie',
+	prezzo: 79.99
+}
+
+const newProdotto = {...prodotto, disponibile:true}
+console.log(newProdotto)
+
 /* ESERCIZIO 7 — forEach
    Stampa tutti gli utenti nel formato "- Nome Cognome (città)".
    Esempio: "- Mario Rossi (Milano)"
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+utenti.forEach(({nome, cognome, città}) => {
+	console.log(`- ${nome} ${cognome} (${città})`)
+})
 /* ESERCIZIO 8 — map a stringhe
    Usa map per creare nomiCompleti = ["Mario Rossi", "Anna Bianchi", ...].
    Stampa l'array.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const newUtenti = utenti.map(({nome,cognome}) => {
+	return `${nome} ${cognome}`
+})
+console.log(newUtenti)
 
 /* ESERCIZIO 9 — map a oggetti
    Usa map per creare utentiPlus: array di oggetti dove ogni utente ha tutte
@@ -151,11 +179,20 @@ console.log(riepilogo(utenti[2]))
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const utentiPlus = utenti.map((utente) =>{
+ return {...utente, descrizione: `${utente.nome} ${utente.cognome}, ${utente.città}`}
+})
+console.log(utentiPlus[0])
 
 /* ESERCIZIO 10 — filter attivi
    Usa filter per ottenere solo gli utenti con attivo: true.
    Stampa l'array risultante.
 */
+
+const utentiAttivi = utenti.filter(utente => utente.attivo === true)
+
+
+console.log(utentiAttivi) 
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 

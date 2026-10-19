@@ -202,7 +202,10 @@ console.log(utentiAttivi)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const utentiMaggiorenni = utenti.filter(utente => utente.eta >= 18)
 
+
+console.log(utentiMaggiorenni) 
 /* ESERCIZIO 12 — find
    Usa find per trovare il primo utente con id === 4.
    Stampa l'oggetto.
@@ -210,12 +213,17 @@ console.log(utentiAttivi)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const trovaUtente = utenti.find(utente => utente.id === 4)
+
+console.log(trovaUtente)
+
 /* ESERCIZIO 13 — reduce
    a) Usa reduce per calcolare l'età media (somma età / numero utenti). Stampa.
    b) Usa reduce per contare il numero di utenti attivi. Stampa.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
 
 /* ESERCIZIO 14 — sort
    a) Ordina gli utenti per eta crescente. Stampa l'array di nomi nell'ordine.

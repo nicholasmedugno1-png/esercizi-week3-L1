@@ -225,7 +225,7 @@ console.log(trovaUtente)
 /* SCRIVI QUI LA TUA RISPOSTA */
 const etaMedia = utenti.reduce((acc, utente) => acc + utente.eta , 0) / utenti.length
 
-console.log(etaMedia.toFixed(2))
+console.log(etaMedia.toFixed(0))
 /* ESERCIZIO 14 — sort
    a) Ordina gli utenti per eta crescente. Stampa l'array di nomi nell'ordine.
    b) Ordina gli utenti per nome alfabeticamente. Stampa l'array di nomi nell'ordine.

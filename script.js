@@ -223,14 +223,22 @@ console.log(trovaUtente)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const etaMedia = utenti.reduce((acc, utente) => acc + utente.eta , 0) / utenti.length
 
-
+console.log(etaMedia)
 /* ESERCIZIO 14 — sort
    a) Ordina gli utenti per eta crescente. Stampa l'array di nomi nell'ordine.
    b) Ordina gli utenti per nome alfabeticamente. Stampa l'array di nomi nell'ordine.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const etaCrescente = utenti.sort((utente1, utente2) => utente1.eta - utente2.eta)
+
+
+console.log(etaCrescente)
+
+
+
 
 /* ESERCIZIO 15 — Chaining
    Componi una catena di metodi che:
@@ -241,3 +249,12 @@ console.log(trovaUtente)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+
+
+
+
+
+
+
+
